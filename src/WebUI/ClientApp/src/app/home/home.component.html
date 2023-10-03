@@ -1,0 +1,43 @@
+<div class="form-group">
+  <label for="title">Login</label>
+  <input type="text" class="form-control" id="title" [(ngModel)]="formValues.login" />
+
+</div>
+<div class="form-group">
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="password" [(ngModel)]="formValues.password" />
+    
+</div>
+<div class="form-group">
+  <label for="confirmPassword">Confirm password</label>
+  <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="formValues.confirmPassword" />
+</div>
+
+<div class="form-group">
+  <input type="checkbox" id="isAgreed" [(ngModel)]="formValues.isAgreed" >
+  <label for="isAgreed">
+    I agree
+  </label>
+</div>
+
+
+<div class="form-group">
+  <label for="list">Country</label>
+  <select class="form-control" [(ngModel)]="formValues.countryId" (change)='handleCountryChange($event)'>
+    <option [ngValue]="country.id" *ngFor="let country of countries">{{ country.name }}</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="list">Province</label>
+  <select class="form-control" [(ngModel)]="formValues.provinceId">
+    <option [ngValue]="province.id" *ngFor="let province of provinces">{{ province.name }}</option>
+  </select>
+</div>
+
+<div class="modal-footer clearfix">
+  <div class="float-end">
+    <button class="btn btn-default" (click)="handleCancel()">Cancel</button>
+    <button class="btn btn-primary" (click)="handleSubmit()">Create</button>
+  </div>
+</div>
