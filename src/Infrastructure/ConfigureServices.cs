@@ -1,15 +1,15 @@
-﻿using some_app.Application.Common.Interfaces;
-using some_app.Infrastructure.Files;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using some_app.Application.Common.Interfaces;
 using some_app.Infrastructure.Identity;
 using some_app.Infrastructure.Persistence;
 using some_app.Infrastructure.Persistence.Interceptors;
 using some_app.Infrastructure.Services;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
-namespace Microsoft.Extensions.DependencyInjection;
+namespace some_app.Infrastructure;
 
 public static class ConfigureServices
 {
@@ -43,7 +43,6 @@ public static class ConfigureServices
 
         services.AddTransient<IDateTime, DateTimeService>();
         services.AddTransient<IIdentityService, IdentityService>();
-        services.AddTransient<ICsvFileBuilder, CsvFileBuilder>();
 
         services.AddAuthentication()
             .AddIdentityServerJwt();

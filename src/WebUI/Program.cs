@@ -1,3 +1,4 @@
+using some_app.Infrastructure;
 using some_app.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);

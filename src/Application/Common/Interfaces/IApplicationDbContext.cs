@@ -11,9 +11,5 @@ public interface IApplicationDbContext
 
     DbSet<PersonalInfo> PersonalInfos { get; }
     
-    DbSet<TodoList> TodoLists { get; }
-
-    DbSet<TodoItem> TodoItems { get; }
-
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

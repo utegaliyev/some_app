@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {  } from 'ngx-bootstrap/tabs';
+
 import { CountryDto, DictionaryClient, PersonalInfoClient, ProvinceDto, RegisterPersonalInfoCommand } from '../web-api-client';
 
 @Component({
